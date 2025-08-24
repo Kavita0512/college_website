@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | SIESCE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 30px rgba(245, 124, 0, 0.4); } 50% { box-shadow: 0 0 50px rgba(245, 124, 0, 0.6); } }
+    @keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes slide-up { 0% { opacity: 0; transform: translateY(50px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); } }
+    .float { animation: float 3s ease-in-out infinite; }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    .slide-up { animation: slide-up 1s ease-out; }
+    .sparkle { animation: sparkle 2s ease-in-out infinite; position: absolute; border-radius: 50%; }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .icon-container {
+      width: 112px; height: 112px;
+      background: linear-gradient(135deg, #fb8c00, #f57c00);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto; position: relative;
+    }
+    
+    .icon-ring { position: absolute; inset: 8px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.3); }
+    
+    .btn-enhanced {
+      background: linear-gradient(90deg, #f57c00, #fb8c00);
+      border: none; border-radius: 16px; padding: 16px 32px;
+      font-weight: 600; color: white; text-decoration: none;
+      display: inline-flex; align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-enhanced:hover {
+      background: linear-gradient(90deg, #fb8c00, #f57c00);
+      transform: scale(1.1); color: white; text-decoration: none;
+      box-shadow: 0 8px 25px rgba(245, 124, 0, 0.4);
+    }
+    
+    .btn-arrow { margin-right: 12px; font-size: 1.25rem; transition: transform 0.3s ease; }
+    .btn-enhanced:hover .btn-arrow { transform: translateX(-4px); }
+    
+    .title { color: #e46723; font-size: 3.5rem; font-weight: bold; letter-spacing: 2px; }
+    .title-text{color:#fb8c00}
+    .underline-decoration { width: 96px; height: 4px; background: linear-gradient(90deg, #fb8c00, #f57c00); border-radius: 2px; margin: 0 auto 2rem auto; }
+    
+    .sparkle-1 { top: 80px; left: 80px; width: 8px; height: 8px; background: #ffcc80; animation-delay: 0s; }
+    .sparkle-2 { top: 160px; right: 128px; width: 12px; height: 12px; background: #fdd835; animation-delay: 0.5s; }
+    .sparkle-3 { bottom: 128px; left: 160px; width: 8px; height: 8px; background: #ffcc80; animation-delay: 1s; }
+    .sparkle-4 { bottom: 80px; right: 80px; width: 8px; height: 8px; background: #ffc107; animation-delay: 1.5s; }
+    
+    .main-card { border-radius: 24px; padding: 2.5rem; transition: transform 0.5s ease; }
+    .main-card:hover { transform: scale(1.05); }
+    
+    @media (max-width: 768px) { .title-text { font-size: 2.5rem; } .main-card { padding: 2rem; } }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🔹 Top Navigation Bar -->
+  <nav class="navbar  text-white py-2 top-nav">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between w-100 align-items-center">
+        <!-- Left side navigation items -->
+        <div class="d-flex gap-4">
+          <a href="#" class="text-white text-decoration-none">NAAC</a>
+          <a href="#" class="text-white text-decoration-none">NIRF</a>
+          <a href="#" class="text-white text-decoration-none">AQAR</a>
+          <a href="#" class="text-white text-decoration-none">Autonomy</a>
+          <a href="#" class="text-white text-decoration-none">Placement</a>
+          <a href="#" class="text-white text-decoration-none">Internships</a>
+          <a href="#" class="text-white text-decoration-none">Feedback</a>
+        </div>
+        
+        <!-- Right side items -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="btn btn-orange btn-sm">Prospectus</a>
+          <a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-twitter fs-5"></i>
+</a>
+<a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-youtube fs-5"></i>
+</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Spacing below top nav -->
+  <div class="spacing-section"></div>
+
+  <!-- 🔹 Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow ">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <img src="sies_logo.jpg" alt="College Logo">
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto">
+          <!-- Keep all your nav-items & dropdowns exactly as before -->
+          <li class="nav-item"><a class="nav-link text-orange fw-semibold" href="index.html">Home</a></li>
+          <!-- Example dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="coming_soon2.html">History</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Management</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Institutional Goals</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Administration</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Floor Plan</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Facilities</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Accolades</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">What They Say</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Organogram</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fees_structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses Offered</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses & Syllabus</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Programs Outcomes</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Add on / Short Term Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Course</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Faculty Exchange Program</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Academic Calendar and Annual Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Policy & Procedure</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Admissions -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Undergraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Postgraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Online Admission Portal</a></li>
+                        </ul>
+                    </li>
+
+          <!-- Research -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Research</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Committees and Policies</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Major/Minor Projects</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Paper Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Papers Presented</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Books and Chapter Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Recognitions</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Scholars (PhD)</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Events -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Seminars/Conferences/Meets</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Departmental Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Committee Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Capacity Development and Skills Enhancement</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Guidance</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Gender Sensitization Plan</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Entrepreneurship Cell</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- IQAC -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">IQAC</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">IQAC Committee</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">NAAC Certificates</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">AQAR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">SSR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Student Satisfaction Survey Report</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Minutes of Meetings</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Action Taken Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Best Practices</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Institutional Distinctiveness</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Strategic Plan & Deployment</a></li>
+                        </ul>
+                    </li>
+                    <!-- Staff -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Staff</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="faculty.html">Degree College </a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Non-Teaching Staff</a></li>
+                        </ul>
+                    
+                    </li>
+
+                    <!-- Achievements -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Achievements</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Students Achievements</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Staff Achievements</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Welfare Schemes -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Welfare Schemes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Yoga & Meditation</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Personal Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Scholarships</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="contact.html">Contact Us</a>
+                    </li>
+
+                    <!-- Magazine -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="coming_soon2.html">Magazine</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <div class="text-center slide-up position-relative" style="z-index: 10;">
+            
+            <div class="float mb-5">
+              <div class="icon-container pulse-glow">
+                <svg width="56" height="56" fill="white" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <div class="icon-ring"></div>
+              </div>
+            </div>
+
+            <div class="card glass-effect border-0 shadow-lg main-card">
+              <div class="card-body p-0">
+                <h1 class="title mb-4">Coming Soon</h1>
+                <div class="underline-decoration"></div>
+                <p class="lead text-dark mb-4 fw-medium">
+                  <span class="title-text fw-bold">This Page will be available soon.</span>
+                </p>
+                <a href="index.html" class="btn-enhanced">
+                  <span class="btn-arrow">←</span>
+                  <span>Go Back</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+  <footer class="custom-footer pt-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1 fw-semibold fs-5">SIES College of Commerce and Economics (Autonomous)</p>
+    <p class="mb-2 small">Accredited by NAAC | Affiliated to the University of Mumbai</p>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap mb-3">
+      <a href="#" class="footer-link">Home</a>
+      <a href="#" class="footer-link">Admissions</a>
+      <a href="#" class="footer-link">Faculty</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+
+    <div class="small text-white-50 pb-3">&copy; 2025 SIES College of Commerce & Economics. All rights reserved.</div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'973163d6929e85eb',t:'MTc1NTg1NTQzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

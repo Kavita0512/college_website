@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIESCE - Homepage Upgrade</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fff8f1 0%, #ffe0b3 100%);
+    }
+
+    .text-orange {
+      color: var(--theme-orange) !important;
+    }
+
+    /* Header styling with animations */
+    .header {
+      background: linear-gradient(135deg, var(--theme-orange), var(--theme-orange-dark));
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .header h4 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-out;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .header p {
+      font-size: 1.3rem;
+      animation: fadeInUp 1.2s ease-out;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Carousel */
+    .custom-carousel { 
+      max-width: 90%; 
+      margin: 20px auto; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      box-shadow: 0 15px 35px rgba(245, 124, 0, 0.2); 
+    }
+    .custom-carousel img { 
+      width: 100%; 
+      height: auto; 
+      object-fit: cover; 
+      max-height: 500px; 
+      transition: transform 0.3s ease; 
+    }
+    .custom-carousel:hover img { transform: scale(1.05); }
+    .carousel-caption { 
+      bottom: 20%; 
+      animation: fadeInUp 2s ease-in-out; 
+      background: rgba(73, 69, 65, 0.9); 
+      border-radius: 10px; 
+      padding: 10px 15px; 
+      max-width: 70%; 
+    }
+    .carousel-caption h3 { 
+      font-size: 2rem; 
+      font-weight: bold; 
+      color: white; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+      display: inline-block; 
+      padding: 10px 20px; 
+      border-radius: 8px; 
+    }
+    /* Notice board styles */
+    .notice-board {
+      max-height: 300px;
+      overflow-y: auto;
+      border-left: 4px solid var(--theme-orange);
+      background: linear-gradient(135deg, #fff8f1, white);
+      border-radius: 10px;
+    }
+
+    .notice-board li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe0b3;
+      font-size: 15px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .notice-board li:last-child {
+      border-bottom: none;
+    }
+
+    .notice-board li:hover {
+      font-weight: bold;
+      text-decoration: underline;
+      color: var(--theme-blue-dark);
+      cursor: pointer;
+      transform: translateX(10px);
+      background: rgba(245, 124, 0, 0.1);
+    }
+
+    /* News card hover effect */
+    .news-card {
+      background: linear-gradient(135deg, #fff8f1, white);
+      color: #333;
+      border-radius: 15px;
+      margin-top: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .news-card:hover {
+      background: linear-gradient(135deg, var(--theme-orange-light), #ffcc80);
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(245, 124, 0, 0.3);
+      border: 2px solid var(--theme-orange);
+    }
+
+    .news-card:hover .card-title {
+      color: var(--theme-blue-dark);
+    }
+
+    .news-card:hover .card-text {
+      color: #333;
+    }
+
+    /* About section styling */
+    .bg-light {
+      background: linear-gradient(135deg, #fff8f1, #ffe0b3) !important;
+    }
+
+    .bg-light .p-4 {
+      background: linear-gradient(135deg, white, #fff8f1) !important;
+      border: 2px solid var(--theme-orange-light);
+      transition: all 0.3s ease;
+    }
+
+    .bg-light .p-4:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(245, 124, 0, 0.2);
+    }
+
+    /* Button styling */
+    .btn-outline-primary {
+      border-color: var(--theme-orange);
+      color: var(--theme-orange);
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--theme-blue-dark);
+      border-color: var(--theme-orange);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(245, 124, 0, 0.3);
+    }
+
+    /* Modal styling */
+    .modal-header.bg-primary {
+      background: linear-gradient(135deg, var(--theme-orange), 
+      var(--theme-blue-dark)) ;
+    }
+
+    .btn-secondary {
+      background-color: var(--theme-orange);
+      border-color: var(--theme-orange-light);
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--theme-blue-dark);
+      border-color: var(--theme-orange);
+      transform: translateY(-2px);
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    .section-spacing {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .header p {
+        font-size: 1.1rem;
+      }
+      
+      .navbar-nav .nav-link {
+        margin: 5px 0;
+      }
+
+      .custom-carousel img {
+        height: 200px;
+      }
+    }
+.accreditation-img {
+  max-height: 120px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.accreditation-img:hover {
+  transform: scale(1.1);
+}
+/* PDF Modal Overrides */
+.modal-dialog.pdf-modal-dialog {
+  max-width: none !important;
+  width: 95vw !important;
+  height: 95vh !important;
+  margin: auto;
+}
+
+.modal-content.pdf-modal-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body.pdf-modal-body {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .modal-dialog.pdf-modal-dialog {
+    width: 98vw !important;
+    height: 90vh !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modal-dialog.pdf-modal-dialog {
+    width: 90vw !important;
+    height: 85vh !important;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .modal-dialog.pdf-modal-dialog {
+    width: 80vw !important;
+    height: 85vh !important;
+  }
+}
+/*gallery*/
+    @keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+  </style>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+ 
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- 🔹 Top Navigation Bar -->
+  <nav class="navbar  text-white py-2 top-nav">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between w-100 align-items-center">
+        <!-- Left side navigation items -->
+        <div class="d-flex gap-4">
+          <a href="#" class="text-white text-decoration-none">NAAC</a>
+          <a href="#" class="text-white text-decoration-none">NIRF</a>
+          <a href="#" class="text-white text-decoration-none">AQAR</a>
+          <a href="#" class="text-white text-decoration-none">Autonomy</a>
+          <a href="#" class="text-white text-decoration-none">Placement</a>
+          <a href="#" class="text-white text-decoration-none">Internships</a>
+          <a href="#" class="text-white text-decoration-none">Feedback</a>
+        </div>
+        
+        <!-- Right side items -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="btn btn-orange btn-sm">Prospectus</a>
+          <a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-twitter fs-5"></i>
+</a>
+<a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-youtube fs-5"></i>
+</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Spacing below top nav -->
+  <div class="spacing-section"></div>
+
+  <!-- 🔹 Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow ">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <img src="sies_logo.jpg" alt="College Logo">
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto">
+          <!-- Keep all your nav-items & dropdowns exactly as before -->
+          <li class="nav-item"><a class="nav-link text-orange fw-semibold" href="index.html">Home</a></li>
+          <!-- Example dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="coming_soon2.html">History</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Management</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Institutional Goals</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Administration</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Floor Plan</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Facilities</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Accolades</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">What They Say</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Organogram</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fees_structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses Offered</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses & Syllabus</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Programs Outcomes</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Add on / Short Term Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Course</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Faculty Exchange Program</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Academic Calendar and Annual Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Policy & Procedure</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Admissions -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Undergraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Postgraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Online Admission Portal</a></li>
+                        </ul>
+                    </li>
+
+          <!-- Research -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Research</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Committees and Policies</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Major/Minor Projects</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Paper Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Papers Presented</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Books and Chapter Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Recognitions</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Scholars (PhD)</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Events -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Seminars/Conferences/Meets</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Departmental Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Committee Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Capacity Development and Skills Enhancement</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Guidance</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Gender Sensitization Plan</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Entrepreneurship Cell</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- IQAC -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">IQAC</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">IQAC Committee</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">NAAC Certificates</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">AQAR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">SSR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Student Satisfaction Survey Report</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Minutes of Meetings</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Action Taken Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Best Practices</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Institutional Distinctiveness</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Strategic Plan & Deployment</a></li>
+                        </ul>
+                    </li>
+                    <!-- Staff -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Staff</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="faculty.html">Degree College </a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Non-Teaching Staff</a></li>
+                        </ul>
+                    
+                    </li>
+
+                    <!-- Achievements -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Achievements</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Students Achievements</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Staff Achievements</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Welfare Schemes -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Welfare Schemes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Yoga & Meditation</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Personal Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Scholarships</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="contact.html">Contact Us</a>
+                    </li>
+
+                    <!-- Magazine -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="coming_soon2.html">Magazine</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- ✅ header Section -->
+  <div class="header section-spacing">
+    <h4>SIES College of Commerce And Economics</h4>
+    <p>Certified by NAAC | Affiliated to University of Mumbai</p>
+  </div>
+
+  <!-- ✅ Carousel Section -->
+  <div id="mainCarousel" class="carousel slide custom-carousel section-spacing" data-bs-ride="carousel" 
+  data-bs-interval="2500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!--<img src="sies1.jpg" class="d-block w-100" alt="Sies image" class="img-fluid">-->
+         <img src="sies1.jpg" class="d-block w-100 img-fluid" alt="slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Celebrating Excellence</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="sies2.jpeg" class="d-block w-100" alt="Sies image" class="img-fluid">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Empowering Education</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="sies1.jpg" class="d-block w-100" alt="Sies image" class="img-fluid">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Empowering Innovation through AI & Technology</h3>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- ✅ About Us -->
+  <div class="container my-5 section-spacing" data-aos="fade-up">
+    <div class="row justify-content-center" data-aos="fade-up">
+      <div class="col-lg-10">
+        <div class="p-4 bg-light rounded shadow-sm" data-aos="fade-up">
+          <h2 class="text-center mb-3 text-orange">About Us</h2>
+          <p class="lead text-justify">
+            Established in 1989, the <strong>SIES College of Commerce and Economics (Autonomous)</strong> has been a symbol of academic excellence and holistic development in Mumbai...
+          </p>
+          <p class="text-justify">
+            Our institution is driven by the motto <strong>"Rise with Education"</strong>...
+          </p>
+          <p class="text-justify">
+            We take pride in cultivating a learning ecosystem...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ✅ Accreditations Section -->
+<section class="py-5 bg-light section-spacing" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-4 text-orange">Accreditations & Recognitions</h2>
+    <div class="row text-center g-4 justify-content-center">
+
+      <!-- NAAC -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="naac_logo.jpg" class="img-fluid mb-2 accreditation-img" alt="NAAC"
+             data-bs-toggle="modal" data-bs-target="#naacModal">
+        <p>NAAC Accredited</p>
+      </div>
+
+      <!-- EFI -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="efi_logo.png" class="img-fluid mb-2 accreditation-img" alt="EFI"
+             data-bs-toggle="modal" data-bs-target="#efiModal">
+        <p>Certified by EFI</p>
+      </div>
+
+</section>
+
+<!-- ✅ NAAC Modal -->
+<div class="modal fade pdf-modal" id="naacModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered pdf-modal-dialog">
+    <div class="modal-content pdf-modal-content">
+      <div class="modal-header pdf-modal-header">
+        <h5 class="modal-title pdf-modal-title">NAAC Accreditation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0 pdf-modal-body">
+        <iframe src="fees/fees-structure.pdf" scrolling="no" class="pdf-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ EFI Modal -->
+<div class="modal fade pdf-modal" id="efiModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered pdf-modal-dialog">
+    <div class="modal-content pdf-modal-content">
+      <div class="modal-header pdf-modal-header">
+        <h5 class="modal-title pdf-modal-title">EFI Certification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0 pdf-modal-body">
+        <iframe src="pdf/efi_certificate.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" scrolling="no" class="pdf-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ✅ Announcements -->
+  <section class="py-5 bg-light section-spacing" data-aos="fade-up" >
+    <div class="container" data-aos="fade-up" >
+      <h2 class="text-center mb-4 text-orange">Important Announcements / Notices</h2>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="notice-board p-4 bg-white shadow-sm rounded">
+            <ul class="list-unstyled">
+              <li>📌 FYBCOM SEM II REVALUATION NOTICE – July 2025</li>
+              <li>📌 Internal Exam Commencement – August 2025</li>
+              <li>📌 Time Table for Supplementary Exams – July 2025</li>
+              <li>📌 Orientation Program FYBSc IT – 2025-26</li>
+              <li>📌 TYBSc IT Grade Card Link – July 2025</li>
+              <li>📌 PG Admissions Open – Click Here</li>
+              <li>📌 Minority Declaration Dates – 2025-26</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ News & Updates -->
+  <section class="py-5 bg-light section-spacing" >
+    <div class="container">
+      <h2 class="text-center text-orange mb-4">News & Updates</h2>
+      <div class="row g-4">
+        <!--card 1-->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card news-card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">07 April 2025</h5>
+              <p class="card-text">Declaration of Results – FY/SYBCom Supplementary Exam Feb 2025</p>
+              <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#newsModal1">Read more</a>
+            </div>
+          </div>
+        </div>
+        <!--modal-->
+        <div class="modal fade" id="newsModal1" tabindex="-1" aria-labelledby="newsModal1Label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="newsModal1Label">Declaration of Results</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="mb-0">The results for FY/SYBCom Supplementary Exam held in Feb 2025 are now available. Visit the student portal and use your PRN number to check your scorecard.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--card 2-->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card news-card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">15 March 2025</h5>
+              <p class="card-text">Annual Day Celebration Scheduled – Register Now</p>
+              <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#newsModal2">Read more</a>
+            </div>
+          </div>
+        </div>
+        <!--modal-->
+        <div class="modal fade" id="newsModal2" tabindex="-1" aria-labelledby="newsModal2Label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="newsModal2Label">Annual Day Celebration</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="mb-0">Our college Annual Day will be held on 20th March 2025 in the main auditorium. Enjoy performances, awards, and refreshments. Registration closes on 17th March.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--card 3-->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card news-card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">28 February 2025</h5>
+              <p class="card-text">New Library Resources Available for Students</p>
+              <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#newsModal3">Read more</a>
+            </div>
+          </div>
+        </div>
+        <!--modal-->
+        <div class="modal fade" id="newsModal3" tabindex="-1" aria-labelledby="newsModal3Label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="newsModal3Label">Library Update</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="mb-0">We've added new digital resources, e-books, and research databases to our library collection. Students can now access over 10,000 new titles and academic journals online through the library portal.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ✅ Auto Scrolling Gallery -->
+<div class="overflow-hidden">
+  <div class="d-inline-flex gap-0 animate-scroll">
+    <img src="sies1.jpg" class="rounded" style="height:200px;">
+    <img src="sies2.jpeg" class="rounded" style="height:200px;">
+    <img src="sies1.jpg" class="rounded" style="height:200px;">
+    <img src="sies2.jpeg" class="rounded" style="height:200px;">
+    <img src="sies1.jpg" class="rounded" style="height:200px;">
+    <img src="sies2.jpeg" class="rounded" style="height:200px;">
+    <img src="sies1.jpeg" class="rounded" style="height:200px;">
+    <img src="sies2.jpeg" class="rounded" style="height:200px;">
+    <!-- Repeat for seamless scroll -->
+  
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <!--naac certificate-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
+  <!--footer-->
+  <footer class="custom-footer pt-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1 fw-semibold fs-5">SIES College of Commerce and Economics (Autonomous)</p>
+    <p class="mb-2 small">Accredited by NAAC | Affiliated to the University of Mumbai</p>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap mb-3">
+      <a href="#" class="footer-link">Home</a>
+      <a href="#" class="footer-link">Admissions</a>
+      <a href="#" class="footer-link">Faculty</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+
+    <div class="small text-white-50 pb-3">&copy; 2025 SIES College of Commerce & Economics. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9685a32875073b37',t:'MTc1NDA1NDQ3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+  </script>
+  </body>
+</html>

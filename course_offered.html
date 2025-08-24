@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Offered | SIES College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+   <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+<!-- 🔹 Top Navigation Bar -->
+  <nav class="navbar  text-white py-2 top-nav">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between w-100 align-items-center">
+        <!-- Left side navigation items -->
+        <div class="d-flex gap-4">
+          <a href="#" class="text-white text-decoration-none">NAAC</a>
+          <a href="#" class="text-white text-decoration-none">NIRF</a>
+          <a href="#" class="text-white text-decoration-none">AQAR</a>
+          <a href="#" class="text-white text-decoration-none">Autonomy</a>
+          <a href="#" class="text-white text-decoration-none">Placement</a>
+          <a href="#" class="text-white text-decoration-none">Internships</a>
+          <a href="#" class="text-white text-decoration-none">Feedback</a>
+        </div>
+        
+        <!-- Right side items -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="btn btn-orange btn-sm">Prospectus</a>
+          <a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-twitter fs-5"></i>
+</a>
+<a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-youtube fs-5"></i>
+</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Spacing below top nav -->
+  <div class="spacing-section"></div>
+
+  <!-- 🔹 Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow ">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <img src="sies_logo.jpg" alt="College Logo">
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto">
+          <!-- Keep all your nav-items & dropdowns exactly as before -->
+          <li class="nav-item"><a class="nav-link text-orange fw-semibold" href="index.html">Home</a></li>
+          <!-- Example dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="coming_soon2.html">History</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Management</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Institutional Goals</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Administration</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Floor Plan</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Facilities</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Accolades</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">What They Say</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Organogram</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fees_structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses Offered</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses & Syllabus</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Programs Outcomes</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Add on / Short Term Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Course</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Faculty Exchange Program</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Academic Calendar and Annual Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Policy & Procedure</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Admissions -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Undergraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Postgraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Online Admission Portal</a></li>
+                        </ul>
+                    </li>
+
+          <!-- Research -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Research</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Committees and Policies</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Major/Minor Projects</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Paper Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Papers Presented</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Books and Chapter Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Recognitions</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Scholars (PhD)</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Events -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Seminars/Conferences/Meets</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Departmental Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Committee Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Capacity Development and Skills Enhancement</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Guidance</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Gender Sensitization Plan</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Entrepreneurship Cell</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- IQAC -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">IQAC</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">IQAC Committee</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">NAAC Certificates</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">AQAR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">SSR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Student Satisfaction Survey Report</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Minutes of Meetings</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Action Taken Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Best Practices</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Institutional Distinctiveness</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Strategic Plan & Deployment</a></li>
+                        </ul>
+                    </li>
+                    <!-- Staff -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Staff</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="faculty.html">Degree College </a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Non-Teaching Staff</a></li>
+                        </ul>
+                    
+                    </li>
+
+                    <!-- Achievements -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Achievements</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Students Achievements</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Staff Achievements</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Welfare Schemes -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Welfare Schemes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Yoga & Meditation</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Personal Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Scholarships</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="contact.html">Contact Us</a>
+                    </li>
+
+                    <!-- Magazine -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="coming_soon2.html">Magazine</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-warning">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Courses Offered</li>
+            </ol>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="py-4">
+            <h3 class="display-5 fw-bold text-center text-orange mb-5">Courses Offered</h3>
+            
+            <!-- Courses Grid -->
+            <div class="row g-4">
+                <!-- Undergraduate Courses -->
+                <!-- B.Com Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-primary border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-primary mb-0 flex-grow-1">B.Com.</h5>
+                                <button class="btn btn-outline-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#bcomModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BMS Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-primary border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-primary mb-0 flex-grow-1">Bachelors of Management Studies</h5>
+                                <button class="btn btn-outline-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#bmsModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B.Sc IT Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-primary border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-primary mb-0 flex-grow-1">B.Sc. (Information Technology)</h5>
+                                <button class="btn btn-outline-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#bscitModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B.Sc AI Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-primary border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-primary mb-0 flex-grow-1">B.Sc. (Artificial Intelligence)</h5>
+                                <button class="btn btn-outline-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#bscaiModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B.Com A&F Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-primary border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-primary mb-0 flex-grow-1">B.Com. (Accounting and Finance)</h5>
+                                <button class="btn btn-outline-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#bcomafModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Graduate Courses -->
+                <!-- M.Com Accountancy Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-success border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-success mb-0 flex-grow-1">M.Com. (Accountancy)</h5>
+                                <button class="btn btn-outline-success btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#mcomaccModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- M.Com B&F Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-success border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-success mb-0 flex-grow-1">M.Com. (Banking and Finance)</h5>
+                                <button class="btn btn-outline-success btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#mcombfModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- M.Sc IT Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-success border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-success mb-0 flex-grow-1">M.Sc. (Information Technology)</h5>
+                                <button class="btn btn-outline-success btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#mscitModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- M.Sc DS Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover border-success border-2 h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title text-success mb-0 flex-grow-1">M.Sc. (Data Science)</h5>
+                                <button class="btn btn-outline-success btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#mscdsModal">
+                                    View Overview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- B.Com Modal -->
+    <div class="modal fade" id="bcomModal" tabindex="-1" aria-labelledby="bcomModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bcomModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Bachelor of Commerce</h4>
+                    <p class="mb-4">A comprehensive 3-year undergraduate program covering accounting, finance, economics, and business management. Students gain practical knowledge in financial accounting, cost accounting, taxation, and business law.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>3 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>12th Pass (Commerce/Science/Arts)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Comprehensive business education</li>
+                            <li>✓ Strong foundation in accounting & finance</li>
+                            <li>✓ Industry internship opportunities</li>
+                            <li>✓ Professional certification preparation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BMS Modal -->
+    <div class="modal fade" id="bmsModal" tabindex="-1" aria-labelledby="bmsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bmsModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Bachelors of Management Studies</h4>
+                    <p class="mb-4">A 3-year undergraduate program focusing on management principles, organizational behavior, marketing, human resources, and strategic planning. Prepares students for leadership roles in various industries.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>3 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>12th Pass with minimum 50%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Management and leadership skills</li>
+                            <li>✓ Case study methodology</li>
+                            <li>✓ Corporate exposure programs</li>
+                            <li>✓ Entrepreneurship development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- B.Sc IT Modal -->
+    <div class="modal fade" id="bscitModal" tabindex="-1" aria-labelledby="bscitModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bscitModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Bachelor of Science in Information Technology</h4>
+                    <p class="mb-4">A 3-year program covering programming languages, database management, web development, networking, and software engineering. Students learn cutting-edge technologies and develop practical IT skills.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>3 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>12th Pass (Science/Commerce)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Latest programming technologies</li>
+                            <li>✓ Industry-standard software tools</li>
+                            <li>✓ Project-based learning</li>
+                            <li>✓ IT certification programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- B.Sc AI Modal -->
+    <div class="modal fade" id="bscaiModal" tabindex="-1" aria-labelledby="bscaiModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bscaiModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Bachelor of Science in Artificial Intelligence</h4>
+                    <p class="mb-4">An innovative 3-year program focusing on machine learning, deep learning, neural networks, data science, and AI applications. Students work on real-world AI projects and emerging technologies.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>3 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>12th Pass (Science with Mathematics)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Cutting-edge AI technologies</li>
+                            <li>✓ Machine learning projects</li>
+                            <li>✓ Research opportunities</li>
+                            <li>✓ Industry collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- B.Com A&F Modal -->
+    <div class="modal fade" id="bcomafModal" tabindex="-1" aria-labelledby="bcomafModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bcomafModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Bachelor of Commerce in Accounting and Finance</h4>
+                    <p class="mb-4">Specialized 3-year program focusing on advanced accounting principles, financial analysis, investment management, and corporate finance. Ideal for careers in banking, finance, and accounting firms.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>3 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>12th Pass (Commerce preferred)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Advanced accounting principles</li>
+                            <li>✓ Financial analysis skills</li>
+                            <li>✓ Professional exam preparation</li>
+                            <li>✓ Banking sector exposure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- M.Com Accountancy Modal -->
+    <div class="modal fade" id="mcomaccModal" tabindex="-1" aria-labelledby="mcomaccModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="mcomaccModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-success mb-3">Master of Commerce in Accountancy</h4>
+                    <p class="mb-4">A 2-year postgraduate program offering advanced study in accounting theory, auditing, taxation, and financial reporting. Designed for students seeking expertise in professional accounting.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>2 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>B.Com. or equivalent degree</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Advanced accounting research</li>
+                            <li>✓ Professional certification support</li>
+                            <li>✓ Audit and taxation expertise</li>
+                            <li>✓ Corporate accounting focus</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- M.Com B&F Modal -->
+    <div class="modal fade" id="mcombfModal" tabindex="-1" aria-labelledby="mcombfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="mcombfModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-success mb-3">Master of Commerce in Banking and Finance</h4>
+                    <p class="mb-4">A 2-year postgraduate program providing advanced knowledge in banking operations, financial management, investment banking, and international finance. Perfect for senior roles in financial institutions.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>2 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>B.Com./BBA or equivalent degree</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Advanced financial management</li>
+                            <li>✓ Investment banking knowledge</li>
+                            <li>✓ International finance exposure</li>
+                            <li>✓ Research methodology</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- M.Sc IT Modal -->
+    <div class="modal fade" id="mscitModal" tabindex="-1" aria-labelledby="mscitModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="mscitModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-success mb-3">Master of Science in Information Technology</h4>
+                    <p class="mb-4">A 2-year postgraduate program offering advanced study in software development, system analysis, database management, and emerging technologies. Designed for students seeking expertise in IT leadership roles.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>2 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>B.Sc. IT/CS or equivalent degree</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Advanced programming concepts</li>
+                            <li>✓ System architecture design</li>
+                            <li>✓ Research methodology</li>
+                            <li>✓ Industry project work</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- M.Sc DS Modal -->
+    <div class="modal fade" id="mscdsModal" tabindex="-1" aria-labelledby="mscdsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="mscdsModalLabel">Course Overview</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-success mb-3">Master of Science in Data Science</h4>
+                    <p class="mb-4">A 2-year postgraduate program focusing on statistical analysis, machine learning, big data analytics, and data visualization. Perfect for careers in data analysis, business intelligence, and AI research.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Duration</h6>
+                            <p>2 Years</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-secondary">Eligibility</h6>
+                            <p>B.Sc./B.Tech with Mathematics/Statistics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h6 class="text-secondary">Key Highlights</h6>
+                        <ul class="list-unstyled">
+                            <li>✓ Advanced statistical methods</li>
+                            <li>✓ Machine learning algorithms</li>
+                            <li>✓ Big data technologies</li>
+                            <li>✓ Industry internships</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--footer-->
+  <footer class="custom-footer pt-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1 fw-semibold fs-5">SIES College of Commerce and Economics (Autonomous)</p>
+    <p class="mb-2 small">Accredited by NAAC | Affiliated to the University of Mumbai</p>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap mb-3">
+      <a href="#" class="footer-link">Home</a>
+      <a href="#" class="footer-link">Admissions</a>
+      <a href="#" class="footer-link">Faculty</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+
+    <div class="small text-white-50 pb-3">&copy; 2025 SIES College of Commerce & Economics. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967ed55f561cff72',t:'MTc1Mzk4MzEyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

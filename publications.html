@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Publications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+   /* :root {
+      --theme-orange: #f57c00;
+      --theme-orange-dark: #e65100;
+    }
+
+    body {
+      background-color: #fff8f1;
+    }
+*/
+    h2 {
+      color: var(--theme-orange-dark);
+      font-weight: bold;
+    }
+
+    .nav-tabs-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .nav-tabs {
+      border-bottom: 2px solid var(--theme-orange-dark);
+      flex-wrap: nowrap;
+    }
+
+    .nav-tabs .nav-item {
+      flex: 0 0 auto;
+    }
+
+    .nav-tabs .nav-link {
+      color: var(--theme-orange-dark);
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-tabs .nav-link:hover {
+      background-color: #f4b058;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 124, 0, 0.3);
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: var(--theme-orange);
+      color: white;
+      border-color: var(--theme-orange-dark) var(--theme-orange-dark) #fff;
+      font-weight: bold;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 124, 0, 0.4);
+    }
+
+    .table thead {
+      background-color: var(--theme-orange);
+      color: white;
+    }
+
+    .table-bordered th, .table-bordered td {
+      border-color: var(--theme-orange-dark);
+    }
+
+    table th, table td {
+      vertical-align: middle;
+      font-size: 0.95rem;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #fff3e0;
+    }
+
+    /* Table row hover effects */
+    tbody tr {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    tbody tr:hover {
+      background-color: #eccfa4 !important;
+      transform: scale(1.01);
+      box-shadow: 0 4px 15px rgba(245, 124, 0, 0.2);
+    }
+
+    /* Pulse animation for title */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Loading animation 
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }*/
+
+    /*.loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid var(--theme-orange);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 10px;
+    }*/
+
+    /* Bounce effect for numbers */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .bounce-number {
+      animation: bounce 1s ease-in-out;
+    }
+
+    /* Slide in from left animation */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.5s ease-out;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 🔹 Top Navigation Bar -->
+  <nav class="navbar  text-white py-2 top-nav">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between w-100 align-items-center">
+        <!-- Left side navigation items -->
+        <div class="d-flex gap-4">
+          <a href="#" class="text-white text-decoration-none">NAAC</a>
+          <a href="#" class="text-white text-decoration-none">NIRF</a>
+          <a href="#" class="text-white text-decoration-none">AQAR</a>
+          <a href="#" class="text-white text-decoration-none">Autonomy</a>
+          <a href="#" class="text-white text-decoration-none">Placement</a>
+          <a href="#" class="text-white text-decoration-none">Internships</a>
+          <a href="#" class="text-white text-decoration-none">Feedback</a>
+        </div>
+        
+        <!-- Right side items -->
+        <div class="d-flex align-items-center gap-3">
+          <a href="#" class="btn btn-orange btn-sm">Prospectus</a>
+          <a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-twitter fs-5"></i>
+</a>
+<a href="#" class="text-white text-decoration-none">
+  <i class="fa-brands fa-youtube fs-5"></i>
+</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Spacing below top nav -->
+  <div class="spacing-section"></div>
+
+  <!-- 🔹 Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow ">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <img src="sies_logo.jpg" alt="College Logo">
+      </a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto">
+          <!-- Keep all your nav-items & dropdowns exactly as before -->
+          <li class="nav-item"><a class="nav-link text-orange fw-semibold" href="index.html">Home</a></li>
+          <!-- Example dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="coming_soon2.html">History</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Management</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Institutional Goals</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Administration</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Floor Plan</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Facilities</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Accolades</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">What They Say</a></li>
+              <li><a class="dropdown-item" href="coming_soon2.html">Organogram</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Academics</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fees_structure.html">Fee Structure</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses Offered</a></li>
+                            <li><a class="dropdown-item" href="course_offered.html">Courses & Syllabus</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Programs Outcomes</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Add on / Short Term Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Course</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Faculty Exchange Program</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Academic Calendar and Annual Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Policy & Procedure</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Admissions -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Admissions</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Undergraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Postgraduate</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Online Admission Portal</a></li>
+                        </ul>
+                    </li>
+
+          <!-- Research -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Research</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Committees and Policies</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Major/Minor Projects</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Paper Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Papers Presented</a></li>
+                            <li><a class="dropdown-item" href="publications.html">Books and Chapter Publications</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Recognitions</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Scholars (PhD)</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Research Activities</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Events -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Seminars/Conferences/Meets</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Departmental Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Committee Events</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Photo Gallery</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Capacity Development and Skills Enhancement</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Guidance</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Gender Sensitization Plan</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Entrepreneurship Cell</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- IQAC -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">IQAC</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">IQAC Committee</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">NAAC Certificates</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">AQAR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">SSR</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Student Satisfaction Survey Report</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Minutes of Meetings</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Action Taken Reports</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Best Practices</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Institutional Distinctiveness</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Strategic Plan & Deployment</a></li>
+                        </ul>
+                    </li>
+                    <!-- Staff -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Staff</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="faculty.html">Degree College </a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Non-Teaching Staff</a></li>
+                        </ul>
+                    
+                    </li>
+
+                    <!-- Achievements -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Achievements</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Students Achievements</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Staff Achievements</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Welfare Schemes -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-orange fw-semibold" href="#" data-bs-toggle="dropdown">Welfare Schemes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="coming_soon2.html">Career Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Bridge Courses</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Yoga & Meditation</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Personal Counselling</a></li>
+                            <li><a class="dropdown-item" href="coming_soon2.html">Scholarships</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="contact.html">Contact Us</a>
+                    </li>
+
+                    <!-- Magazine -->
+                    <li class="nav-item">
+                        <a class="nav-link text-orange fw-semibold" href="coming_soon2.html">Magazine</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container py-5">
+  <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#" class="text-warning">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Research</li>
+            </ol>
+        </nav>
+  <h2 class="text-center mb-4 pulse-animation">📚 Year-wise Research Paper Publications</h2>
+
+  <!-- Scrollable Year Tabs -->
+  <div class="nav-tabs-wrapper mb-4">
+    <ul class="nav nav-tabs" id="yearTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab2024-tab" data-bs-toggle="tab" data-bs-target="#tab2024" type="button" role="tab">2024–2025</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2023-tab" data-bs-toggle="tab" data-bs-target="#tab2023" type="button" role="tab">2023–2024</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2022-tab" data-bs-toggle="tab" data-bs-target="#tab2022" type="button" role="tab">2022–2023</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2021-tab" data-bs-toggle="tab" data-bs-target="#tab2021" type="button" role="tab">2021–2022</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab">2020–2021</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2019-tab" data-bs-toggle="tab" data-bs-target="#tab2019" type="button" role="tab">2019–2020</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2018-tab" data-bs-toggle="tab" data-bs-target="#tab2018" type="button" role="tab">2018–2019</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Single Table with Dynamic Content -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="text-center">
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Publisher</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>ISSN</th>
+          <th>Impact/Note</th>
+        </tr>
+      </thead>
+      <tbody id="publicationsTableBody">
+        <!-- Dynamic content will be loaded here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Publications data
+  const publicationsData = {
+    '2024': [
+      {
+        title: 'Machine Learning Applications in Healthcare Data Analysis',
+        author: 'Dr. Sarah Johnson, Prof. Michael Chen',
+        publisher: 'IEEE Transactions on Biomedical Engineering',
+        date: 'March 2024',
+        type: 'Journal',
+        issn: '0018-9294',
+        impact: 'Impact Factor: 4.538'
+      },
+      {
+        title: 'Quantum Computing Algorithms for Optimization Problems',
+        author: 'Prof. David Wilson, Dr. Lisa Zhang',
+        publisher: 'Nature Quantum Information',
+        date: 'January 2024',
+        type: 'Journal',
+        issn: '2056-6387',
+        impact: 'Impact Factor: 10.758'
+      },
+      {
+        title: 'Sustainable Energy Systems: A Comprehensive Review',
+        author: 'Dr. Emma Rodriguez, Prof. James Kim',
+        publisher: 'Renewable Energy',
+        date: 'February 2024',
+        type: 'Review',
+        issn: '0960-1481',
+        impact: 'Impact Factor: 8.634'
+      },
+      {
+        title: 'Neural Networks for Natural Language Processing',
+        author: 'Dr. Alex Thompson, Prof. Maria Garcia',
+        publisher: 'ACM Computing Surveys',
+        date: 'April 2024',
+        type: 'Survey',
+        issn: '0360-0300',
+        impact: 'Impact Factor: 14.324'
+      },
+      {
+        title: 'Blockchain Technology in Supply Chain Management',
+        author: 'Prof. Robert Lee, Dr. Anna Patel',
+        publisher: 'International Journal of Production Economics',
+        date: 'May 2024',
+        type: 'Journal',
+        issn: '0925-5273',
+        impact: 'Impact Factor: 11.251'
+      }
+    ],
+    '2023': [
+      {
+        title: 'Artificial Intelligence in Medical Diagnosis',
+        author: 'Dr. Jennifer Brown, Prof. Kevin Wang',
+        publisher: 'The Lancet Digital Health',
+        date: 'September 2023',
+        type: 'Journal',
+        issn: '2589-7500',
+        impact: 'Impact Factor: 36.615'
+      },
+      {
+        title: 'Cloud Computing Security Frameworks',
+        author: 'Prof. Mark Davis, Dr. Sophie Miller',
+        publisher: 'IEEE Transactions on Cloud Computing',
+        date: 'November 2023',
+        type: 'Journal',
+        issn: '2168-7161',
+        impact: 'Impact Factor: 5.697'
+      },
+      {
+        title: 'Internet of Things in Smart Cities',
+        author: 'Dr. Rachel Green, Prof. Tom Anderson',
+        publisher: 'IEEE Internet of Things Journal',
+        date: 'December 2023',
+        type: 'Journal',
+        issn: '2327-4662',
+        impact: 'Impact Factor: 10.238'
+      }
+    ],
+    '2022': [
+      {
+        title: 'Deep Learning for Computer Vision Applications',
+        author: 'Prof. Helen Carter, Dr. Paul Martinez',
+        publisher: 'Computer Vision and Image Understanding',
+        date: 'June 2022',
+        type: 'Journal',
+        issn: '1077-3142',
+        impact: 'Impact Factor: 4.886'
+      },
+      {
+        title: 'Cybersecurity in Industrial Control Systems',
+        author: 'Dr. Steven Taylor, Prof. Linda White',
+        publisher: 'IEEE Transactions on Industrial Informatics',
+        date: 'August 2022',
+        type: 'Journal',
+        issn: '1551-3203',
+        impact: 'Impact Factor: 11.648'
+      }
+    ],
+    '2021': [
+      {
+        title: '5G Networks and Edge Computing Integration',
+        author: 'Dr. Brian Clark, Prof. Nancy Lewis',
+        publisher: 'IEEE Communications Magazine',
+        date: 'March 2021',
+        type: 'Journal',
+        issn: '0163-6804',
+        impact: 'Impact Factor: 11.053'
+      }
+    ],
+    '2020': [
+      {
+        title: 'Big Data Analytics in Healthcare Systems',
+        author: 'Prof. Carol Young, Dr. Daniel Hall',
+        publisher: 'Journal of Medical Internet Research',
+        date: 'October 2020',
+        type: 'Journal',
+        issn: '1438-8871',
+        impact: 'Impact Factor: 7.076'
+      }
+    ],
+    '2019': [
+      {
+        title: 'Robotics in Manufacturing Automation',
+        author: 'Dr. George Adams, Prof. Betty Scott',
+        publisher: 'IEEE Transactions on Automation Science',
+        date: 'July 2019',
+        type: 'Journal',
+        issn: '1545-5955',
+        impact: 'Impact Factor: 6.636'
+      }
+    ],
+    '2018': [
+      {
+        title: 'Virtual Reality in Education and Training',
+        author: 'Prof. Frank Turner, Dr. Grace Phillips',
+        publisher: 'Computers & Education',
+        date: 'April 2018',
+        type: 'Journal',
+        issn: '0360-1315',
+        impact: 'Impact Factor: 11.182'
+      }
+    ]
+  };
+
+  // Function to load publications for a specific year
+  function loadPublications(year) {
+    const tableBody = document.getElementById('publicationsTableBody');
+    const publications = publicationsData[year] || [];
+    
+    /*// Show loading animation
+    tableBody.innerHTML = `
+      <tr>
+        <td colspan="8" class="text-center py-4">
+          <div class="loading"></div>
+          Loading publications...
+        </td>
+      </tr>
+    `;*/
+    
+    // Simulate loading delay for effect
+    setTimeout(() => {
+      tableBody.innerHTML = '';
+      
+      publications.forEach((pub, index) => {
+        const row = document.createElement('tr');
+        row.className = 'fade-in-up';
+        row.style.animationDelay = `${index * 0.1}s`;
+        row.innerHTML = `
+          <td class="text-center bounce-number" style="animation-delay: ${index * 0.1 + 0.5}s">${index + 1}</td>
+          <td class="slide-in-left" style="animation-delay: ${index * 0.1 + 0.2}s">${pub.title}</td>
+          <td class="slide-in-left" style="animation-delay: ${index * 0.1 + 0.3}s">${pub.author}</td>
+          <td class="slide-in-left" style="animation-delay: ${index * 0.1 + 0.4}s">${pub.publisher}</td>
+          <td class="text-center slide-in-left" style="animation-delay: ${index * 0.1 + 0.5}s">${pub.date}</td>
+          <td class="text-center slide-in-left" style="animation-delay: ${index * 0.1 + 0.6}s">${pub.type}</td>
+          <td class="text-center slide-in-left" style="animation-delay: ${index * 0.1 + 0.7}s">${pub.issn}</td>
+          <td class="slide-in-left" style="animation-delay: ${index * 0.1 + 0.8}s">${pub.impact}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }, 800);
+  }
+
+  // Tab functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('[data-bs-toggle="tab"]');
+    
+    // Load initial data (2024)
+    loadPublications('2024');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Extract year from target ID
+        const targetId = this.getAttribute('data-bs-target');
+        const year = targetId.replace('#tab', '');
+        
+        // Load publications for the selected year
+        loadPublications(year);
+      });
+    });
+  });
+</script>
+<!--footer-->
+  <footer class="custom-footer pt-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1 fw-semibold fs-5">SIES College of Commerce and Economics (Autonomous)</p>
+    <p class="mb-2 small">Accredited by NAAC | Affiliated to the University of Mumbai</p>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap mb-3">
+      <a href="#" class="footer-link">Home</a>
+      <a href="#" class="footer-link">Admissions</a>
+      <a href="#" class="footer-link">Faculty</a>
+      <a href="#" class="footer-link">Contact</a>
+    </div>
+
+    <div class="small text-white-50 pb-3">&copy; 2025 SIES College of Commerce & Economics. All rights reserved.</div>
+  </div>
+</footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'968505e9f2133e58',t:'MTc1NDA0ODAzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

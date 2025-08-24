@@ -1,0 +1,107 @@
+/* Theme Colors */
+:root {
+  --theme-orange: #f57c00;
+  --theme-orange-light: #ffa040;
+  --theme-orange-dark: #e65100;
+  --theme-blue-dark: #002b5b;
+  --theme-blue-light: #00509d;
+}
+
+/* Global Typography */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fff8f1 0%, #ffe0b3 100%);
+}
+
+/* Dropdown style */
+    .dropdown-menu {
+      border: 2px solid var(--theme-blue-light);
+      border-radius: 6px;
+      padding: 10px;
+      min-width: 220px;
+    }
+    .dropdown-menu a {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: #374151;
+      display: block;
+    }
+    .dropdown-menu a:hover {
+      background: #fff7ed;
+      color: #f97316;
+    }
+.btn-orange { background-color: #f97316; border-color: #f97316; color: white; }
+    /* Navbar brand (logo) */
+    .navbar-brand img {
+      max-height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      .carousel-item img { height: 250px; }
+      .navbar-brand img { max-height: 45px; }
+    }
+    @media (max-width: 576px) {
+      .navbar-brand img { max-height: 40px; }
+    }
+    .top-nav {
+  background-color:var(--theme-blue-light); /* Light blue theme */
+}
+.top-nav a:hover {
+  color: #ffcc80 !important; /* Orange hover color */
+}
+ /*prospectus btn*/
+    .btn-orange { background-color: #f97316; border-color: #f97316; color: white; }
+.btn-orange:hover {
+  background-color: #f37827; /* Slightly darker orange on hover */
+  border-color: #e65c00;
+  color: white;
+}
+    /* Navbar text adjustments */
+    .navbar-nav .nav-link {
+      white-space: nowrap;
+      font-size: 0.95rem;
+      padding: 8px 10px;
+    }
+    @media (max-width: 576px) {
+      .navbar-nav .nav-link { font-size: 0.85rem; }
+    }
+
+    /* Hover open dropdowns (desktop only) */
+    @media (min-width: 992px) {
+      .navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    /* Scrollable dropdown for long lists (mobile friendly) */
+    .dropdown-menu {
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+/* Utility */
+.text-orange {
+  color: var(--theme-orange) !important;
+}
+
+.custom-footer {
+  background: linear-gradient(140deg,var(--theme-orange),var(--theme-blue-light));
+  color: white;
+}
+
+.custom-footer .footer-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.custom-footer .footer-link:hover {
+  color: #ffcc80;
+  text-decoration: underline;
+}
+
+
